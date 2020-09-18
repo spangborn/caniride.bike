@@ -52,6 +52,19 @@
       cursor: default;
     }
 
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      list-style-type: none;
+      margin: 0.5em 0;
+    }
+
+    ul li a {
+      font-size: 2em;
+    }
+
     /* remove display: none, and turn on setTimers(), to restore */
     #links {
       position: fixed;
@@ -97,13 +110,23 @@
 
 <body>
 
-  <a id="answer"
-    href="#"
-    target="_blank"
-    onclick="return false">
-    Yes
+  <a id="answer">
+    Maybe.
   </a>
-  <h2>You can ride City Creek Canyon today.</h2>
+  <h2>Where do you want to ride?</h2>
+  <ul>
+    <li>
+      <a href="emigration/">Emigration Canyon</a>
+    </li>
+    <!--<li>
+      <a href="citycreek/">City Creek Canyon</a>
+    </li>
+    <li>
+      <a href="guardsman/">Guardsman Pass</a>
+    </li>-->
+    
+  </ul>
+
 
   <div id="links">
     <a href="https://twitter.com/spangborn" target="_blank">by @spangborn</a>
