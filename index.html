@@ -71,7 +71,7 @@
       display: block;
     }
 
-    /* remove display: none, and turn on setTimers(), to restore */
+
     #links {
       position: fixed;
       bottom: 0; left: 0;
@@ -80,11 +80,6 @@
       text-align: left;
       font-size: 10pt;
       z-index: 9999;
-
-      -webkit-transition: 0.5s ease-out;
-         -moz-transition: 0.5s ease-out;
-           -o-transition: 0.5s ease-out;
-              transition: 0.5s ease-out;
     }
 
     #links a {
@@ -93,14 +88,12 @@
       margin-right: 10px;
     }
 
-    /* I heard you like dark mode */
-
     @media (prefers-color-scheme: dark) {
       body {
         background-color: black;
         color: white;
       }
-      a#answer {
+      a {
         color: white;
       }
 
@@ -110,8 +103,6 @@
 
     }
   </style>
-
-  <script type="text/javascript" src="/js/caniride.js?<%= (new Date()).getTime() %>"></script>
 </head>
 
 <body>
