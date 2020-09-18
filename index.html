@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="authors" href="/humans.txt" />
+
+  <meta charset="utf-8" />
+  <title>Can I Ride?</title>
+
+  <!--
+    <link rel="shortcut icon" href="/icons/large.png" />
+
+    <link rel="manifest" href="/manifest.json"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/144.png"/>
+-->
+
+  <meta name="theme-color" content="#fff"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+  <meta name="twitter:site" content="@spangborn">
+  <meta name="twitter:creator" content="@spangborn">
+  <meta property="og:site_name" content="Can I Ride?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://caniride.bike" />
+
+  <meta property="og:title" content="Can I Ride?" />
+
+  <meta name="twitter:card" content="summary">
+  <!--<meta property="og:image" content="https://caniride.bike/icons/large-wide.png" />-->
+
+    <style type="text/css">
+
+    body {
+      color: black;
+      background-color: white;
+      padding: 2rem;
+      text-align: center;
+
+      font-family: Arial, sans-serif;
+    }
+
+    a, body {color: black;}
+
+    a#answer {
+      display: inline-block;
+      margin-top: 200px;
+      font-weight: bold;
+      font-size: 120pt;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+
+      cursor: default;
+    }
+
+    /* remove display: none, and turn on setTimers(), to restore */
+    #links {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 300px;
+      padding-left: 15px; padding-bottom: 5px;
+      text-align: left;
+      font-size: 10pt;
+      z-index: 9999;
+
+      -webkit-transition: 0.5s ease-out;
+         -moz-transition: 0.5s ease-out;
+           -o-transition: 0.5s ease-out;
+              transition: 0.5s ease-out;
+    }
+
+    #links a {
+      color: #333;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+
+    /*
+      Dark mode overrides.
+
+      Apparently, order matters: these dark mode rules need to come after any rule they are modifying.
+    */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: black;
+        color: white;
+      }
+      a#answer {
+        color: white;
+      }
+
+      #links a {
+        color: #ccc;
+      }
+
+    }
+  </style>
+
+  <script type="text/javascript" src="/js/caniride.js?<%= (new Date()).getTime() %>"></script>
+</head>
+
+<body>
+
+  <a id="answer"
+    href="#"
+    target="_blank"
+    onclick="return false">
+    Yes
+  </a>
+  <h2>You can ride City Creek Canyon today.</h2>
+
+  <div id="links">
+    <a href="https://twitter.com/spangborn" target="_blank">by @spangborn</a>
+    <a href="/">Find other places to ride</a>
+  </div
+
+
+
+</body>
+</html>
