@@ -1,0 +1,80 @@
+
+body {
+    color: black;
+    background-color: white;
+    padding: 2rem;
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+}
+
+a, body {color: black;}
+
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0.5em 0;
+}
+
+ul li a {
+    font-size: 2em;
+}
+
+img.dave {
+    margin: 0 auto;
+    width: 200px;
+}
+
+img.maybe {
+    width: 250px;
+    margin: 2em auto;
+    display: block;
+}
+
+a#answer {
+    display: inline-block;
+    margin-top: 100px;
+    font-weight: bold;
+    font-size: 120pt;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+
+    cursor: default;
+}
+
+#links {
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 300px;
+    padding-left: 15px; padding-bottom: 5px;
+    text-align: left;
+    font-size: 10pt;
+    z-index: 9999;
+}
+
+#links a {
+    color: #333;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* I heard you like dark mode */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+    a {
+        color: white;
+    }
+
+    #links a {
+        color: #ccc;
+    }
+
+}
