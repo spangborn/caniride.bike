@@ -46,7 +46,7 @@ h1#answer {
 
     cursor: default;
 }
-h1#answer.maybe {
+h1.maybe {
     font-size: 90pt;
 }
 
