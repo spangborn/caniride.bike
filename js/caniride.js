@@ -47,17 +47,17 @@ var caniride = {
         if (today.isAfter(lastMondayOfMay) && today.isBefore(lastEvenDayOfSept) ) {
 
             if (today.date() % 2 != 0) {
-                returnData.result = "No";
+                returnData.result = "Yes";
                 returnData.explanation = "Today is an odd day on the <a href='https://www.slc.gov/utilities/city-creek-canyon/' target='_blank'>City Creek schedule</a>.";
                 return returnData;
             }
             else {
-                returnData.result = "Yes";
+                returnData.result = "No";
                 returnData.explanation = "It's an even day on the <a href='https://www.slc.gov/utilities/city-creek-canyon/' target='_blank'>City Creek schedule</a>."
             }
 
         }
-        
+
         // If it's October and the third week of the month
         if ( today.month() == 10 && weekOfMonth(today) == 3) {
             returnData.result = "Probably not";
