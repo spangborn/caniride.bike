@@ -35,15 +35,19 @@ img.maybe {
     display: block;
 }
 
-a#answer {
+h1#answer {
     display: inline-block;
     margin-top: 100px;
+    margin-bottom: 0px;
     font-weight: bold;
     font-size: 120pt;
     font-family: Arial, sans-serif;
     text-decoration: none;
 
     cursor: default;
+}
+h1#answer.maybe {
+    font-size: 90pt;
 }
 
 #links {
