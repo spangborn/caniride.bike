@@ -62,7 +62,7 @@ var caniride = {
         //if ( today.month() == 10 && weekOfMonth(today) == 3) {
         if ( today.month() == 9 && today.date() >= 17 && today.date() < 26) {
             returnData.result = "Probably not";
-            returnData.result = "City Creek is closed to bicycles during the rifle deer hunt. Dates vary from year to year for this hunt but it is typically the third week in October."
+            returnData.explanation = "City Creek is closed to bicycles during the rifle deer hunt. Dates vary from year to year for this hunt but it is typically the third week in October."
         }
 
         return returnData;
