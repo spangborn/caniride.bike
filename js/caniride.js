@@ -61,7 +61,7 @@ var caniride = {
         // If it's October and the rifle hunt
         //if ( today.month() == 10 && weekOfMonth(today) == 3) {
         if ( today.month() == 9 && today.date() >= 17 && today.date() < 26) {
-            returnData.result = "No;
+            returnData.result = "No";
             returnData.explanation = "City Creek is closed to bicycles during the rifle hunt October 17-25.";
             //returnData.explanation = "City Creek is closed to bicycles during the rifle deer hunt. Dates vary from year to year for this hunt but it is typically the third week in October."
         }
