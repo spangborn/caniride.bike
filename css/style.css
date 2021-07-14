@@ -96,6 +96,10 @@ h1#answer.maybe {
     font-size: 25px;
     line-height: 35px;
 }
+
+#machine div a {
+    text-decoration-color: #FC4C02;
+}
 input.spin {
     margin-top: 20px;
     width: 300px;
