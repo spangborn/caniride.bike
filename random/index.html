@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/jquery.slotmachine.min.css">
 
+  <script src="/js/moment.js"></script>
+  <script src="/js/moment-holiday.min.js"></script>
   <script src="/js/slotmachine.min.js"></script>
 
 </head>
@@ -43,7 +45,7 @@
     <div class="long"><a href="https://www.strava.com/routes/2850441822327037886" target="_blank">Little Cottonwood Canyon</a></div>
     <div><a href="https://www.strava.com/routes/2850442865736719294" target="_blank">Emigration Canyon</a></div>
     <div><a href="https://www.strava.com/routes/2850443084667939774" target="_blank">Millcreek Canyon</a></div>
-    <div><a href="https://www.strava.com/routes/2850442624575984944" target="_blank">City Creek Canyon</a></div>
+    <div id="citycreek"><a href="https://www.strava.com/routes/2850442624575984944" target="_blank">City Creek Canyon</a></div>
     <div><a href="https://www.strava.com/routes/2850443332322834934" target="_blank">Butterfield Canyon</a></div>
     <div><a href="https://www.strava.com/routes/2850443624069830590" target="_blank">Farmington Canyon</a></div>
     <div><a href="https://www.strava.com/routes/2850443880989870384" target="_blank">Lambs Canyon</a></div>
@@ -56,28 +58,73 @@
   </div>
   <p>Click a name to see a Strava route for that canyon.</p>
   <script>
-  const el = document.querySelector('#machine');
-  const myButton = document.querySelector("#stop");
-  const refreshButton = document.querySelector("#refresh");
-  const machine = new SlotMachine(el, {
-    active: 0,
-    delay: 450
-  });
+    // Configure moment holidays
+    moment.modifyHolidays.set(['Memorial Day', 'Independence Day', 'Labor Day']);
 
-  machine.shuffle(99999);
-  // Add the button listener
-  myButton.addEventListener('click', () => {
-    // Stop spinning
-    machine.stop();
-    myButton.remove();
-    refreshButton.classList.remove('hidden')
-  });
-  refreshButton.addEventListener('click', () => {
-    window.location.reload();
-  });
+    // Add Pioneer Day
+    moment.modifyHolidays.add({
+        "Pioneer Day": {
+            date: '7/24',
+            keywords_y: ['pioneer']
+        }
+    });
 
-  
+    function weekOfMonth (input = moment()) {
+        const firstDayOfMonth = input.clone().startOf('month');
+        const firstDayOfWeek = firstDayOfMonth.clone().startOf('week');
+    
+        const offset = firstDayOfMonth.diff(firstDayOfWeek, 'days');
+    
+        return Math.ceil((input.date() + offset) / 7);
+    }
 
+    var today = moment();
+
+    // Check to see if its one of the holidays City Creek doesn't allow
+    if (today.isHoliday()) {
+      document.querySelector('#citycreek').remove();
+    }
+    
+    var lastMondayOfMay = moment().month("May").endOf("month").startOf("isoweek");
+    var lastEvenDayOfSept = moment().month("September").endOf("month");
+
+    // If the last day of September is odd, subtract a day
+    if (lastEvenDayOfSept.date() % 2 != 0) lastEvenDayOfSept = lastEvenDayOfSept.add(-1, "day");
+    
+    // If we're on special schedule for City Creek, check even/odd
+    if (today.isAfter(lastMondayOfMay) && today.isBefore(lastEvenDayOfSept) ) {
+
+        if (today.date() % 2 == 0) {
+          document.querySelector('#citycreek').remove();
+        }
+
+    }
+
+    // If it's October and the rifle hunt
+    //if ( today.month() == 10 && weekOfMonth(today) == 3) {
+    if ( today.month() == 9 && today.date() >= 17 && today.date() < 26) {
+      document.querySelector('#citycreek').remove();
+    }
+
+    const el = document.querySelector('#machine');
+    const myButton = document.querySelector("#stop");
+    const refreshButton = document.querySelector("#refresh");
+    const machine = new SlotMachine(el, {
+      active: 0,
+      delay: 450
+    });
+
+    machine.shuffle(99999);
+    // Add the button listener
+    myButton.addEventListener('click', () => {
+      // Stop spinning
+      machine.stop();
+      myButton.remove();
+      refreshButton.classList.remove('hidden')
+    });
+    refreshButton.addEventListener('click', () => {
+      window.location.reload();
+    });
 
   </script>
 
