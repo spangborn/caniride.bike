@@ -53,7 +53,7 @@ h1#answer.maybe {
 #links {
     position: fixed;
     bottom: 0; left: 0;
-    width: 300px;
+    width: 500px;
     padding-left: 15px; padding-bottom: 5px;
     text-align: left;
     font-size: 10pt;
