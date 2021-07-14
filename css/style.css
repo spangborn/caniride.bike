@@ -89,7 +89,11 @@ h1#answer.maybe {
 }
 #machine div {
     font-size: 35px;
-
+    line-height: 35px;
+}
+#machine div.long {
+    font-size: 25px;
+    line-height: 35px;
 }
 input.spin {
     margin-top: 20px;
