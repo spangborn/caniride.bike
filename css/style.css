@@ -82,3 +82,23 @@ h1#answer.maybe {
     }
 
 }
+
+#machine {
+    height: 38px;
+    overflow: hidden;
+}
+#machine div {
+    font-size: 35px;
+
+}
+input.spin {
+    margin-top: 20px;
+    width: 300px;
+    background: black;
+    border: 1px solid white;
+    color: white;
+    font-size: 28px;
+}
+input.hidden {
+    display: none;
+}

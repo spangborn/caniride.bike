@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="authors" href="/humans.txt" />
+
+  <meta charset="utf-8" />
+  <title>Can I Ride?</title>
+
+  <!--
+    <link rel="shortcut icon" href="/icons/large.png" />
+
+    <link rel="manifest" href="/manifest.json"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/144.png"/>
+-->
+
+  <meta name="theme-color" content="#fff"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+  <meta name="twitter:site" content="@spangborn">
+  <meta name="twitter:creator" content="@spangborn">
+  <meta property="og:site_name" content="Can I Ride?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://caniride.bike" />
+
+  <meta property="og:title" content="Can I Ride?" />
+
+  <meta name="twitter:card" content="summary">
+  <!--<meta property="og:image" content="https://caniride.bike/icons/large-wide.png" />-->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/jquery.slotmachine.min.css">
+
+  <script src="/js/slotmachine.min.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Let's find a canyon to ride</h1>
+
+  <div id="machine">
+    <div>Big Cottonwood Canyon</div>
+    <div>Little Cottonwood Canyon</div>
+    <div>Emigration Canyon</div>
+    <div>Millcreek Canyon</div>
+    <div>City Creek Canyon</div>
+    <div>Butterfield Canyon</div>
+    <div>Farmington Canyon</div>
+  </div>
+  
+  <input type="button" id="stop" class="spin" value="Go!"/>
+  <div>
+    <input type="button" id="refresh" class="spin hidden" value="Spin again"/>
+  </div>
+  <script>
+  const el = document.querySelector('#machine');
+  const myButton = document.querySelector("#stop");
+  const refreshButton = document.querySelector("#refresh");
+  const machine = new SlotMachine(el, {
+    active: 0,
+    delay: 450
+  });
+
+  machine.shuffle(99999);
+  // Add the button listener
+  myButton.addEventListener('click', () => {
+    // Stop spinning
+    machine.stop();
+    myButton.remove();
+    refreshButton.classList.remove('hidden')
+  });
+  refreshButton.addEventListener('click', () => {
+    window.location.reload();
+  });
+
+  
+
+
+  </script>
+
+  <div id="links">
+    <a href="https://twitter.com/spangborn" target="_blank">by @spangborn</a>
+    <a href="/">Find other places to ride</a>
+  </div>
+</body>
+</html>
