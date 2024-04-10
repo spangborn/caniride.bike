@@ -41,7 +41,7 @@ var caniride = {
         if (today.day() != 6 && today.day() != 0) {
             returnData.result = "No";
             returnData.explanation = "City Creek is closed to bicycles during the week due to <a href='https://www.slc.gov/utilities/city-creek-canyon/'>construction</a>.";
-            return;
+            return returnData;
         }
         
         var lastMondayOfMay = moment().month("May").endOf("month").startOf("isoweek");
