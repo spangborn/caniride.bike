@@ -84,11 +84,11 @@ var caniride = {
 
         if (today.date() % 2 != 0) {
             returnData.result = "No";
-            returnData.explanation = "Today is an odd day on the <a href='https://slco.org/parks/millcreek-canyon/' target='_blank'>Millcreek Canyon schedule</a>. Bikes are <strong>NOT</strong> allowed on Big Water, Little Water, and Great Western Trails.";
+            returnData.explanation = "Today is an odd day on the <a href='https://slco.org/parks-recreation/parks-trails/millcreek-canyon/' target='_blank'>Millcreek Canyon schedule</a>. Bikes are <strong>NOT</strong> allowed on Big Water, Little Water, and Great Western Trails.";
         }
         else {
             returnData.result = "Yes";
-            returnData.explanation = "It's an even day on the <a href='https://slco.org/parks/millcreek-canyon/' target='_blank'>Millcreek Canyon schedule</a>. Bikes are allowed on Big Water, Little Water, and Great Western Trails."
+            returnData.explanation = "It's an even day on the <a href='https://slco.org/parks-recreation/parks-trails/millcreek-canyon/' target='_blank'>Millcreek Canyon schedule</a>. Bikes are allowed on Big Water, Little Water, and Great Western Trails."
         }
 
         return returnData;
