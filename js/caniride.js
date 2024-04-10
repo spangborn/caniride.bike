@@ -97,11 +97,9 @@ var caniride = {
         // Data structure to return
         var returnData = {
             "result" : "Yes",
-            "explanation" : ""
+            "explanation" : "Yes, you can ride Emigration Canyon today."
         };
 
-        returnData.result = "Yes";
-        returnData.explanation = "Yes, <a href='https://twitter.com/ozskier/status/1306433630453915648' target='_blank'>Dave</a>. You can ride Emigration Canyon today.";
         return returnData;
     },
     "guardsman" : function () {
