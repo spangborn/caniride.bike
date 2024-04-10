@@ -36,6 +36,13 @@ var caniride = {
             returnData.result = "No";
             returnData.explanation = "Today is a Utah holiday.";
         }
+
+        // If it is a weekday, City Creek is closed due to construction until 2027
+        if (today.getDay() != 6 && today.getDay() != 0) {
+            returnData.result = "No";
+            returnData.explanation = "City Creek is closed to bicycles during the week due to <a href='https://www.slc.gov/utilities/city-creek-canyon/'>construction</a>.";
+            return;
+        }
         
         var lastMondayOfMay = moment().month("May").endOf("month").startOf("isoweek");
         var lastEvenDayOfSept = moment().month("September").endOf("month");
