@@ -38,7 +38,7 @@ var caniride = {
         }
 
         // If it is a weekday, City Creek is closed due to construction until 2027
-        if (today.getDay() != 6 && today.getDay() != 0) {
+        if (today.day() != 6 && today.day() != 0) {
             returnData.result = "No";
             returnData.explanation = "City Creek is closed to bicycles during the week due to <a href='https://www.slc.gov/utilities/city-creek-canyon/'>construction</a>.";
             return;
